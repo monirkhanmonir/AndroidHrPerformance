@@ -7,4 +7,12 @@
     android:gravity="center"
     tools:context=".EmployeeManagement">
 
+
+    <ListView
+        android:id="@+id/allEmployee"
+        android:divider="#333"
+        android:dividerHeight="2dp"
+        android:listSelector="#8F9CC0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
