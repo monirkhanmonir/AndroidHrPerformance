@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="2"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/background_color"
+    android:gravity="center"
+    tools:context=".AdminMenu">
+        <LinearLayout
+            android:gravity="center"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+                <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:id="@+id/employeeManagement"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:background="@drawable/circlebackgroundpurple"
+                                android:src="@drawable/administrator"
+                                android:padding="10dp"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp" />
+                                <View
+                                    android:layout_margin="10dp"
+                                    android:background="@color/material_deep_purple"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+                                <TextView
+                                    android:layout_marginTop="5dp"
+                                    android:text="@string/management"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:id="@+id/employeeAppraisal"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                                <ImageView
+                                    android:background="@drawable/circlebackgroundpink"
+                                    android:src="@drawable/businesspresentation"
+                                    android:padding="10dp"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp" />
+                                <View
+                                    android:layout_margin="10dp"
+                                    android:background="@color/material_pink"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+                                <TextView
+                                    android:layout_marginTop="5dp"
+                                    android:text="@string/appraisal"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+                <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:id="@+id/employee"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                                <ImageView
+                                    android:background="@drawable/circlebackgroundblue"
+                                    android:src="@drawable/men"
+                                    android:padding="10dp"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp" />
+                                <View
+                                    android:layout_margin="10dp"
+                                    android:background="@color/material_blue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+                                <TextView
+                                    android:layout_marginTop="5dp"
+                                    android:text="@string/Employee"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:id="@+id/aboutUs"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                                <ImageView
+                                    android:background="@drawable/circlebackgroundgreen"
+                                    android:src="@drawable/network"
+                                    android:padding="10dp"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp" />
+                                <View
+                                    android:layout_margin="10dp"
+                                    android:background="@color/material_green"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"/>
+                                <TextView
+                                    android:layout_marginTop="5dp"
+                                    android:text="@string/about"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+</LinearLayout>
