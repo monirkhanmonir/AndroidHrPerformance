@@ -1,17 +1,37 @@
 package com.example.hrpa.Model;
 
-public class Employee {
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
+public class Employee {
+    @SerializedName("id")
+    @Expose
     int id;
+    @SerializedName("empName")
+    @Expose
     public String empName;
+    @SerializedName("empEmail")
+    @Expose
     public String empEmail;
+    @SerializedName("user")
+    @Expose
     public String user;
+    @SerializedName("gender")
+    @Expose
     public String gender;
+    @SerializedName("jobTitle")
+    @Expose
     public String jobTitle;
+    @SerializedName("birthDate")
+    @Expose
     public String birthDate;
+    @SerializedName("joinDate")
+    @Expose
     public String joinDate;
     public String password;
     public String repassword;
+    @SerializedName("address")
+    @Expose
     public String address;
     public String getEmpName() {
         return empName;

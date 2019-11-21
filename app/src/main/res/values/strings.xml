@@ -12,6 +12,7 @@
     <string name="createTasks">Tasks</string>
     <string name="employeeDetails">Employee Details</string>
     <string name="aboutUs">About Us</string>
+    <string name="name">eId</string>
 
 
 </resources>

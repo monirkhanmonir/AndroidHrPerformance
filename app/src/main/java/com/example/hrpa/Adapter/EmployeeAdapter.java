@@ -16,16 +16,20 @@ import com.example.hrpa.R;
 
 import java.util.List;
 
+import retrofit2.Callback;
+
 public class EmployeeAdapter extends ArrayAdapter<Employee> {
     Context context;
     List<Employee> empList;
 
-    public EmployeeAdapter(Context context, List<Employee> employees){
-        super(context, R.layout.all_employee);
+    public EmployeeAdapter(Context context, List<Employee> empList){
+        super(context, R.layout.all_employee, empList);
         this.context  = context;
-        this.empList = employees;
+        this.empList = empList;
 
     }
+
+
 
     @NonNull
     @Override
@@ -42,6 +46,6 @@ public class EmployeeAdapter extends ArrayAdapter<Employee> {
         designation.setText(empList.get(position).getJobTitle());
 
 
-        return super.getView(position, convertView, parent);
+        return convertView;
     }
 }
