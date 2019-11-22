@@ -4,7 +4,156 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context=".AddEmployee">
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="434dp">
+
+        <TableLayout
+            android:id="@+id/employeeDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="30dp"
+            android:background="#CDDC39
+"
+            android:divider="@color/colorPrimaryDark"
+            android:gravity="left"
+            android:padding="10dp">
+
+
+            <TableRow android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/employeeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Enter Employee Name"
+                    android:padding="10dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+            <TableRow android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/employeeEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Enter Email Address"
+                    android:padding="10dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+            <TableRow android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/employeeUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Enter User Name"
+                    android:padding="10dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+            <TableRow android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/empPsd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Enter Passwrod"
+                    android:padding="10dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+            <TableRow android:layout_margin="5dp">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/regAdmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Admin"
+                        android:textSize="24sp"
+                        android:textStyle="italic|bold" />
+
+                    <RadioButton
+                        android:id="@+id/regManager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Manager"
+                        android:textSize="24sp"
+                        android:textStyle="italic|bold" />
+
+                    <RadioButton
+                        android:id="@+id/regEmployee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Employee"
+                        android:textSize="24sp"
+                        android:textStyle="italic|bold" />
+                </RadioGroup>
+            </TableRow>
+
+
+            <TableRow android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Enter Employee Address"
+                    android:padding="10dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+            <!--<TableRow android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/employeeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="Enter Employee ID"
+                    android:padding="10dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>-->
+        </TableLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/storeEmp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textAlignment="center"
+        android:textSize="30dp" />
 </LinearLayout>

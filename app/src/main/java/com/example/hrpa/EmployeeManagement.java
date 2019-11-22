@@ -66,9 +66,6 @@ public class EmployeeManagement extends AppCompatActivity {
 
                     }
                 });
-
-
-
             }
 
             @Override

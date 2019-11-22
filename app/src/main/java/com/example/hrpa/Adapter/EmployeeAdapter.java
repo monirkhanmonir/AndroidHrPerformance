@@ -16,8 +16,6 @@ import com.example.hrpa.R;
 
 import java.util.List;
 
-import retrofit2.Callback;
-
 public class EmployeeAdapter extends ArrayAdapter<Employee> {
     Context context;
     List<Employee> empList;
@@ -37,8 +35,8 @@ public class EmployeeAdapter extends ArrayAdapter<Employee> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.all_employee,parent,false);
         TextView empName = convertView.findViewById(R.id.empName);
-        TextView designation = convertView.findViewById(R.id.empDesignation);
-        TextView empEmail = convertView.findViewById(R.id.empEmail);
+        TextView designation = convertView.findViewById(R.id.workquality);
+        TextView empEmail = convertView.findViewById(R.id.workqualitycmnt);
 
 
         empName.setText(empList.get(position).getEmpName());

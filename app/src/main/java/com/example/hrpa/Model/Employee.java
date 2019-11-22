@@ -4,9 +4,12 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Employee {
+
+Integer eId;
+
     @SerializedName("id")
     @Expose
-    int id;
+    Integer  id;
     @SerializedName("empName")
     @Expose
     public String empName;
@@ -33,6 +36,24 @@ public class Employee {
     @SerializedName("address")
     @Expose
     public String address;
+
+    public Employee(String empName, String empEmail, String user, String jobTitle, String password, String address) {
+        this.empName = empName;
+        this.empEmail = empEmail;
+        this.user = user;
+        this.jobTitle = jobTitle;
+        this.password = password;
+        this.address = address;
+    }
+
+    public Integer geteId() {
+        return eId;
+    }
+
+    public void seteId(Integer eId) {
+        this.eId = eId;
+    }
+
     public String getEmpName() {
         return empName;
     }
@@ -94,12 +115,15 @@ public class Employee {
     public void setAddress(String address) {
         this.address = address;
     }
-    public int getId() {
+
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+
+    public void setId(Integer id) {
         this.id = id;
     }
+
     @Override
     public String toString() {
         return "Employee [id=" + id + ", empName=" + empName + ", empEmail=" + empEmail + ", user=" + user + ", gender="
