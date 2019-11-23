@@ -47,6 +47,13 @@ public class EmployeeAppraisal extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(EmployeeAppraisal.this,PerformanceDetails.class);
+
+                        intent.putExtra("empName",reatingList.get(position).getEmpName());
+                        intent.putExtra("rateDate", reatingList.get(position).getRatingDate());
+                        intent.putExtra("jobnladge", reatingList.get(position).getJobKnowledge().toString());
+                        intent.putExtra("jKnoledgeCmnt",reatingList.get(position).getJobKnowledgeCmnt());
+
+
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(),reatingList.get(position).getEmpName(),Toast.LENGTH_SHORT).show();
                     }
