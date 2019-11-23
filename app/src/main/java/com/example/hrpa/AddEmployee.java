@@ -61,8 +61,9 @@ public class AddEmployee extends AppCompatActivity {
                 Log.d("test",user);
 
 
-                Employee employee = new Employee(name,email,user,psd,jobTitle,address);
+
                 EmployeeInterF service = RetrofitClientInstance.getRetrofitInstance().create(EmployeeInterF.class);
+                Employee employee = new Employee(name,email,user,psd,jobTitle,address);
                 Call<Employee> call = service.storeEmployee(employee);
                 call.enqueue(new Callback<Employee>() {
                     @Override
