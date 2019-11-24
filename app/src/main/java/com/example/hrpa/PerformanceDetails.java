@@ -37,9 +37,18 @@ public class PerformanceDetails extends AppCompatActivity {
 
         ratingDate.setText(intent.getStringExtra("rateDate"));
         empName.setText(intent.getStringExtra("empName"));
-      //  empName.setText(intent.getStringExtra("jobnladge"));
+        jobKnowledge.setRating(Float.parseFloat(intent.getStringExtra("jobnladge")));
         jobKnowledgeCmnt.setText(intent.getStringExtra("jKnoledgeCmnt"));
-
+       workquality.setRating(Float.parseFloat(intent.getStringExtra("empworkquality")));
+        workqualityCmnt.setText(intent.getStringExtra("empworkqualityCmnt"));
+        attendance.setRating(Float.parseFloat(intent.getStringExtra("empattendance")));
+        attendanceCmnt.setText(intent.getStringExtra("empattendanceCmnt"));
+        productivity.setRating(Float.parseFloat(intent.getStringExtra("empproductivity")));
+        productivityCmnt.setText(intent.getStringExtra("empproductivityCmnt"));
+         communicationSkills.setRating(Float.parseFloat(intent.getStringExtra("empcommunicationSkills")));
+        communicationSkillsCmnt.setText(intent.getStringExtra("empcommunicationSkillscmnt"));
+        dependability.setRating(Float.parseFloat(intent.getStringExtra("empdependability")));
+        dependabilityCmnt.setText(intent.getStringExtra("empdependabilitycmnt"));
 
     }
 }

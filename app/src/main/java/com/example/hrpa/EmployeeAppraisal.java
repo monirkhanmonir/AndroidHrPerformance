@@ -32,6 +32,7 @@ public class EmployeeAppraisal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_appraisal);
         listView  = findViewById(R.id.reationView);
+        listView  = findViewById(R.id.reationView);
         EmployeeInterF service = RetrofitClientInstance.getRetrofitInstance().create(EmployeeInterF.class);
         Call<List<EmpRating>> call = service.getEmpReating();
         call.enqueue(new Callback<List<EmpRating>>() {
@@ -52,8 +53,16 @@ public class EmployeeAppraisal extends AppCompatActivity {
                         intent.putExtra("rateDate", reatingList.get(position).getRatingDate());
                         intent.putExtra("jobnladge", reatingList.get(position).getJobKnowledge().toString());
                         intent.putExtra("jKnoledgeCmnt",reatingList.get(position).getJobKnowledgeCmnt());
-
-
+                        intent.putExtra("empworkquality",reatingList.get(position).getWorkquality().toString());
+                        intent.putExtra("empworkqualityCmnt",reatingList.get(position).getWorkqualityCmnt());
+                        intent.putExtra("empattendance",reatingList.get(position).getAttendance().toString());
+                        intent.putExtra("empattendanceCmnt",reatingList.get(position).getAttendanceCmnt());
+                        intent.putExtra("empproductivity",reatingList.get(position).getProductivity().toString());
+                        intent.putExtra("empproductivityCmnt",reatingList.get(position).getProductivityCmnt());
+                        intent.putExtra("empcommunicationSkills",reatingList.get(position).getCommunicationSkills()).toString();
+                        intent.putExtra("empcommunicationSkillscmnt",reatingList.get(position).getProductivityCmnt());
+                        intent.putExtra("empdependability",reatingList.get(position).getDependability().toString());
+                        intent.putExtra("empdependabilitycmnt",reatingList.get(position).getDependabilityCmnt());
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(),reatingList.get(position).getEmpName(),Toast.LENGTH_SHORT).show();
                     }

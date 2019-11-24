@@ -22,14 +22,18 @@
         <activity android:name=".AboutUs" />
         <activity android:name=".AddEmployee" />
         <activity android:name=".EmployeeAppraisal" />
-        <activity android:name=".EmployeeManagement" />
-        <activity android:name=".AdminMenu" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".EmployeeManagement">
+
+        </activity>
+        <activity android:name=".AdminMenu" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

@@ -27,25 +27,23 @@
             android:layout_weight="3"
             android:orientation="vertical">
 
+            <RatingBar
+                android:id="@+id/overallRating"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="10dp"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/colorAccent"
+                android:progressTint="@color/colorPrimary"
+                android:stepSize="1" />
             <TextView
-                android:id="@+id/workquality"
+                android:id="@+id/additionalCmnt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="Designation"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/pointScore"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="point Score"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textSize="24sp" />
+                android:text="Commect"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
 
         </LinearLayout>
