@@ -2,6 +2,7 @@ package com.example.hrpa.hrpService;
 
 import com.example.hrpa.Model.EmpRating;
 import com.example.hrpa.Model.Employee;
+import com.example.hrpa.Model.WorkReport;
 
 import java.util.List;
 
@@ -16,6 +17,11 @@ public interface EmployeeInterF {
 
     @GET("performance/report")
     Call<List<EmpRating>> getEmpReating();
+
+    @GET("empReport")
+    Call<List<WorkReport>> getEmpReport();
+
+
 
 
     @POST("storeEmp")

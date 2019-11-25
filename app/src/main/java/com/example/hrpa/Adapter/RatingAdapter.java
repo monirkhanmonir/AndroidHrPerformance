@@ -34,7 +34,7 @@ public class RatingAdapter extends ArrayAdapter<EmpRating> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.emp_performance_report,parent,false);
 
-        TextView name = convertView.findViewById(R.id.empName);
+        TextView name = convertView.findViewById(R.id.repoType);
         RatingBar overAllScore = convertView.findViewById(R.id.overallRating);
         TextView overallCmnt = convertView.findViewById(R.id.additionalCmnt);
 

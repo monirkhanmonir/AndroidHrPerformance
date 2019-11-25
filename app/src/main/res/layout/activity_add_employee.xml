@@ -32,7 +32,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
                     android:hint="Enter Employee Name"
                     android:padding="10dp"
                     android:textSize="24sp"
@@ -92,27 +91,30 @@
                         android:id="@+id/regAdmin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:text="Admin"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="italic|bold" />
 
                     <RadioButton
                         android:id="@+id/regManager"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:text="Manager"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="italic|bold" />
 
                     <RadioButton
                         android:id="@+id/regEmployee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:text="Employee"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="italic|bold" />
                 </RadioGroup>
             </TableRow>

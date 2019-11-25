@@ -34,7 +34,7 @@ public class EmployeeAdapter extends ArrayAdapter<Employee> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.all_employee,parent,false);
-        TextView empName = convertView.findViewById(R.id.empName);
+        TextView empName = convertView.findViewById(R.id.repoType);
         TextView designation = convertView.findViewById(R.id.workquality);
         TextView empEmail = convertView.findViewById(R.id.workqualitycmnt);
 
