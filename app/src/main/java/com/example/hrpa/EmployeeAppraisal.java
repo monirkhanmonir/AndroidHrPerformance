@@ -32,7 +32,7 @@ public class EmployeeAppraisal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_appraisal);
         listView  = findViewById(R.id.reationView);
-        listView  = findViewById(R.id.reationView);
+
         EmployeeInterF service = RetrofitClientInstance.getRetrofitInstance().create(EmployeeInterF.class);
         Call<List<EmpRating>> call = service.getEmpReating();
         call.enqueue(new Callback<List<EmpRating>>() {
@@ -44,9 +44,13 @@ public class EmployeeAppraisal extends AppCompatActivity {
                 RatingAdapter adapter = new  RatingAdapter(EmployeeAppraisal.this,reatingList);
                 listView.setAdapter(adapter);
 
+
+
+
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Toast.makeText(getApplicationContext(),"hi.",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(EmployeeAppraisal.this,PerformanceDetails.class);
 
                         intent.putExtra("empName",reatingList.get(position).getEmpName());
