@@ -8,8 +8,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 public class PerformanceDetails extends AppCompatActivity {
-    RatingBar jobKnowledge,workquality,attendance,productivity,communicationSkills,dependability;
-    TextView ratingDate,empName,jobKnowledgeCmnt,workqualityCmnt,attendanceCmnt,productivityCmnt,communicationSkillsCmnt,dependabilityCmnt,additionalCmnt;
+    RatingBar jobKnowledge, workquality, attendance, productivity, communicationSkills, dependability;
+    TextView ratingDate, empName, jobKnowledgeCmnt, workqualityCmnt, attendanceCmnt, productivityCmnt, communicationSkillsCmnt, dependabilityCmnt, additionalCmnt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ public class PerformanceDetails extends AppCompatActivity {
         productivityCmnt = findViewById(R.id.productivityCmnt);
         communicationSkillsCmnt = findViewById(R.id.cmSkillsCmnt);
         dependabilityCmnt = findViewById(R.id.dependabilityCmnt);
-      //  additionalCmnt = findViewById(R.id.a)
+        //  additionalCmnt = findViewById(R.id.a)
 
         Intent intent = getIntent();
 
@@ -39,13 +40,13 @@ public class PerformanceDetails extends AppCompatActivity {
         empName.setText(intent.getStringExtra("empName"));
         jobKnowledge.setRating(Float.parseFloat(intent.getStringExtra("jobnladge")));
         jobKnowledgeCmnt.setText(intent.getStringExtra("jKnoledgeCmnt"));
-       workquality.setRating(Float.parseFloat(intent.getStringExtra("empworkquality")));
+        workquality.setRating(Float.parseFloat(intent.getStringExtra("empworkquality")));
         workqualityCmnt.setText(intent.getStringExtra("empworkqualityCmnt"));
         attendance.setRating(Float.parseFloat(intent.getStringExtra("empattendance")));
         attendanceCmnt.setText(intent.getStringExtra("empattendanceCmnt"));
         productivity.setRating(Float.parseFloat(intent.getStringExtra("empproductivity")));
         productivityCmnt.setText(intent.getStringExtra("empproductivityCmnt"));
-         communicationSkills.setRating(Float.parseFloat(intent.getStringExtra("empcommunicationSkills")));
+        communicationSkills.setRating(Float.parseFloat(intent.getStringExtra("empcommunicationSkills")));
         communicationSkillsCmnt.setText(intent.getStringExtra("empcommunicationSkillscmnt"));
         dependability.setRating(Float.parseFloat(intent.getStringExtra("empdependability")));
         dependabilityCmnt.setText(intent.getStringExtra("empdependabilitycmnt"));

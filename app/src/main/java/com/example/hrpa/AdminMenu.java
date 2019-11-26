@@ -44,8 +44,8 @@ public class AdminMenu extends AppCompatActivity implements View.OnClickListener
             startActivity(intent);
         }
         else if(v.getId()==R.id.aboutUs){
-            Intent intent = new Intent(getApplicationContext(), AboutUs.class);
-            startActivity(intent);
+           // Intent intent = new Intent(getApplicationContext(), AboutUs.class);
+            //startActivity(intent);
         }
     }
 }

@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReportDetails"></activity>
-        <activity android:name=".AboutCompany" />
+        <activity android:name=".PerformsnceReating"></activity>
+        <activity android:name=".ReportDetails" />
         <activity android:name=".EmployeeDetailsManager" />
         <activity android:name=".CreateTask" />
         <activity android:name=".AppraisalRating" />
@@ -26,12 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AboutUs" />
         <activity android:name=".AddEmployee" />
         <activity android:name=".EmployeeAppraisal" />
-        <activity android:name=".EmployeeManagement"></activity>
-        <activity android:name=".AdminMenu"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".EmployeeManagement" />
+        <activity android:name=".AdminMenu" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

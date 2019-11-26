@@ -1,17 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ReportDetails">
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:weightSum="7">
+
+        <TextView
+            android:layout_weight="2"
+            android:id="@+id/eID"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Eid"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/eName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Employee Name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/repoType"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="Report Type" />
+
+                <TextView
+                    android:id="@+id/repoDate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="Date" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/repoId"
-        android:layout_width="wrap_content"
+        android:id="@+id/testReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--<WebView
+        android:id="@+id/webRepo"
+        android:layout_width="match_parent"
+        android:layout_height="284dp"
+        android:padding="10dp"/>-->
+
+    <Button
+        android:id="@+id/justifyBtn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Report Deatils"
-        android:textAlignment="center"
-        android:textSize="30sp" />
+        android:layout_marginTop="20dp"
+        android:shadowColor="@color/colorPrimary"
+        android:text="Justify" />
+
+
+
 </LinearLayout>

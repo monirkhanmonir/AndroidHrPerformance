@@ -24,7 +24,8 @@ import retrofit2.Response;
 
 public class AppraisalRating extends AppCompatActivity {
     List<WorkReport> repoList = new ArrayList<>();
-    ListView repoView ;
+    ListView repoView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,15 +39,22 @@ public class AppraisalRating extends AppCompatActivity {
                 repoList = response.body();
                 Log.d("EmpReport", repoList.toString());
 
-                WorkReportAdapter adapter = new WorkReportAdapter(AppraisalRating.this,repoList);
+                WorkReportAdapter adapter = new WorkReportAdapter(AppraisalRating.this, repoList);
                 repoView.setAdapter(adapter);
 
                 repoView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Intent intent  = new Intent(AppraisalRating.this,ReportDetails.class);
-                  startActivity(intent);
-                   }
+                        Intent intent = new Intent(AppraisalRating.this, ReportDetails.class);
+
+                        intent.putExtra("eName", repoList.get(position).getEmpName());
+                        intent.putExtra("id", String.valueOf(repoList.get(position).getEmpId()));
+                        intent.putExtra("repoClassify", repoList.get(position).getRepoDuration());
+                        intent.putExtra("repoDat", repoList.get(position).getReopDate());
+                        intent.putExtra("report", repoList.get(position).getWorkReport());
+
+                        startActivity(intent);
+                    }
                 });
             }
 

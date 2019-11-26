@@ -27,4 +27,7 @@ public interface EmployeeInterF {
     @POST("storeEmp")
     Call<Employee> storeEmployee(@Body Employee employee);
 
+    @POST("storeTaring")
+    Call<EmpRating> storePerformanceRating(@Body EmpRating empRating);
+
 }

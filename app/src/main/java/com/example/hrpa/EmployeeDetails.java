@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class EmployeeDetails extends AppCompatActivity {
 
-    TextView eId,name,email,user,gender,jobTitle,address,birthDate,joinDate;
+    TextView eId, name, email, user, gender, jobTitle, address, birthDate, joinDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,20 +28,19 @@ public class EmployeeDetails extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String id =intent.getStringExtra("eId");
+        String id = intent.getStringExtra("eId");
 
         Log.d("Id", id.toString());
 
         eId.setText(id);
-      name.setText(intent.getStringExtra("eName"));
-       email.setText(intent.getStringExtra("empEmail"));
+        name.setText(intent.getStringExtra("eName"));
+        email.setText(intent.getStringExtra("empEmail"));
         user.setText(intent.getStringExtra("user"));
-       gender.setText(intent.getStringExtra("gender"));
-       jobTitle.setText(intent.getStringExtra("jobTitle"));
-       birthDate.setText(intent.getStringExtra("birthDAte"));
-       joinDate.setText(intent.getStringExtra("jpinDate"));
+        gender.setText(intent.getStringExtra("gender"));
+        jobTitle.setText(intent.getStringExtra("jobTitle"));
+        birthDate.setText(intent.getStringExtra("birthDAte"));
+        joinDate.setText(intent.getStringExtra("jpinDate"));
         address.setText(intent.getStringExtra("address"));
-
 
 
     }
