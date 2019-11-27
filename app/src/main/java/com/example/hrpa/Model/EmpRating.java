@@ -22,9 +22,19 @@ public class EmpRating {
     public String overallRating;
     public String additionalCmnt;
 
+    public EmpRating(String name, String jobKnowledge, String workquality, String attendance, String productivity, String communicationSkills, String dependability,String overallRating) {
 
 
+        this.empName = name;
+        this.jobKnowledge = jobKnowledge;
+        this.workquality = workquality;
+        this.attendance = attendance;
+        this.productivity = productivity;
+        this.communicationSkills = communicationSkills;
+        this.dependability = dependability;
+        this.overallRating = overallRating;
 
+    }
 
 
     public String getEmpName() {

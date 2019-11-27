@@ -10,6 +10,8 @@ public class WorkReport {
     public  String workReport;
     public String repoStatus;
 
+
+
     public String getRepoStatus() {
         return repoStatus;
     }
