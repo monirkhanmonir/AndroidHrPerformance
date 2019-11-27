@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.hrpa.SharePreferance.HrpSharePreferance;
 
 public class ManagerMenu extends AppCompatActivity {
 
@@ -44,8 +47,11 @@ public class ManagerMenu extends AppCompatActivity {
         aboutCompany.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent intent = new Intent(getApplicationContext(), AboutCompany.class);
-              //  startActivity(intent);
+
+                SharedPreferences sp = HrpSharePreferance.getSharePreferance(getApplicationContext());
+                sp.edit().remove("userName").commit();
+                Intent intent = new Intent(ManagerMenu.this,MainActivity.class);
+                startActivity(intent);
             }
         });
 

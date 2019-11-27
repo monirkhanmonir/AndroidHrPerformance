@@ -20,17 +20,19 @@
         <activity android:name=".EmployeeDetails" />
         <activity android:name=".EmployeeMenu" />
         <activity android:name=".ManagerMenu">
+
+        </activity>
+        <activity android:name=".AddEmployee" />
+        <activity android:name=".EmployeeAppraisal" />
+        <activity android:name=".EmployeeManagement" />
+        <activity android:name=".AdminMenu" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddEmployee" />
-        <activity android:name=".EmployeeAppraisal" />
-        <activity android:name=".EmployeeManagement" />
-        <activity android:name=".AdminMenu" />
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -46,6 +46,11 @@ Integer eId;
         this.address = address;
     }
 
+    public Employee(String username, String pass) {
+        this.empName = username;
+        this.password = pass;
+    }
+
     public Integer geteId() {
         return eId;
     }

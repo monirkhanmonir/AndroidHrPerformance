@@ -3,11 +3,22 @@ package com.example.hrpa;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.hrpa.Model.Employee;
+import com.example.hrpa.RetrofitConnector.RetrofitClientInstance;
+import com.example.hrpa.SharePreferance.HrpSharePreferance;
+import com.example.hrpa.hrpService.EmployeeInterF;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.http.Body;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,20 +37,76 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.loginBtn);
         textView = findViewById(R.id.textViewId);
         textView.setText("Number of Attempts remaining : 4");
+
+        SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
+
+     String user =   preferences.getString("userName","");
+     if(user.equals("admin")){
+         Intent intent = new Intent(MainActivity.this,AdminMenu.class);
+         startActivity(intent);
+     }else if(user.equals("management")){
+         Intent intent = new Intent(MainActivity.this, ManagerMenu.class);
+         startActivity(intent);
+     }else if(user.equals("employee")){
+         Intent intent = new Intent(MainActivity.this, EmployeeMenu.class);
+         startActivity(intent);
+     }
+
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = userName.getText().toString();
                 String pass = password.getText().toString();
 
+
+
+                /*EmployeeInterF service = RetrofitClientInstance.getRetrofitInstance().create(EmployeeInterF.class);
+                Employee employee = new Employee(username,pass);
+                Call<Employee> call = service.userLogin(employee);
+                call.enqueue(new Callback<Employee>() {
+                    @Override
+                    public void onResponse(Call<Employee> call, Response<Employee> response) {
+                        Employee employee=  response.body();
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Employee> call, Throwable t) {
+
+                    }
+                });*/
+
+
+
+
+
                 if(username.equalsIgnoreCase("admin") && pass.equalsIgnoreCase("123")){
+
+                    SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
+                    SharedPreferences.Editor editor = preferences.edit();
+
+                    editor.putString("userName",username);
+                    editor.commit();
 
                     Intent intent = new Intent(MainActivity.this, AdminMenu.class);
                     startActivity(intent);
                 }else if(username.equalsIgnoreCase("employee") && pass.equalsIgnoreCase("123")){
+                    SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
+                    SharedPreferences.Editor editor = preferences.edit();
+
+                    editor.putString("userName",username);
+                    editor.commit();
+
                     Intent intent = new Intent(MainActivity.this, EmployeeMenu.class);
                     startActivity(intent);
                 }else if(username.equalsIgnoreCase("management") && pass.equalsIgnoreCase("123")){
+                    SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
+                    SharedPreferences.Editor editor = preferences.edit();
+
+                    editor.putString("userName",username);
+                    editor.commit();
+
                     Intent intent = new Intent(MainActivity.this, ManagerMenu.class);
                     startActivity(intent);
                 } else{
