@@ -63,17 +63,11 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/testReport"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <!--<WebView
+    <WebView
         android:id="@+id/webRepo"
         android:layout_width="match_parent"
-        android:layout_height="284dp"
-        android:padding="10dp"/>-->
+        android:layout_height="wrap_content"
+        android:padding="10dp"/>
 
     <Button
         android:id="@+id/justifyBtn"
