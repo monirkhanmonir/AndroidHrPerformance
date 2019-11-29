@@ -12,40 +12,46 @@ import android.widget.Toast;
 
 public class ReportDetails extends AppCompatActivity {
     WebView webReport;
-    TextView eId,eName,repoDate,repoQuality, textReport;
+    TextView eId, eName, repoDate, repoQuality, textReport;
     Button justifyButton;
+    String name,id,repoType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_details);
-       webReport = findViewById(R.id.webRepo);
+        webReport = findViewById(R.id.webRepo);
         eId = findViewById(R.id.eID);
         eName = findViewById(R.id.eName);
         repoDate = findViewById(R.id.repoDate);
         repoQuality = findViewById(R.id.repoType);
         //textReport = findViewById(R.id.testReport);
-        final Intent intent = getIntent();
-        eId.setText(intent.getStringExtra("id"));
-        eName.setText(intent.getStringExtra("eName"));
-        repoQuality.setText(intent.getStringExtra("repoClassify"));
-        repoDate.setText(intent.getStringExtra("repoDat"));
-      //  textReport.setText();
-      justifyButton  =   findViewById(R.id.justifyBtn);
-       // webReport.loadUrl(intent.getStringExtra("report"));
+        Intent intent = getIntent();
+        name = intent.getStringExtra("eName");
+        id = intent.getStringExtra("id");
+        repoType = intent.getStringExtra("repoClassify");
+        eId.setText(id);
+        eName.setText(name);
 
-        webReport.loadDataWithBaseURL(null,intent.getStringExtra("report"),"text/html","utf-8",null);
+        repoQuality.setText(repoType);
+       // repoDate.setText();
+        //  textReport.setText();
+        justifyButton = findViewById(R.id.justifyBtn);
+        // webReport.loadUrl(intent.getStringExtra("report"));
+
+        webReport.loadDataWithBaseURL(null, intent.getStringExtra("report"), "text/html", "utf-8", null);
 
         justifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReportDetails.this,PerformsnceReating.class);
+                Intent intent = new Intent(ReportDetails.this, PerformsnceReating.class);
 
-                intent.putExtra("empName",intent.getStringExtra("eName"));
-                intent.putExtra("eId", String.valueOf(intent.getStringExtra("id")));
-
+                intent.putExtra("empName", name);
+                intent.putExtra("eId",id);
+                intent.putExtra("repoType",repoType);
+               // intent.putExtra("jobTitle",)
                 startActivity(intent);
-                Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -59,24 +59,9 @@
                     android:layout_weight="2"
                     android:gravity="center"
                     android:text="Date" />
-
-
-
-
-
-
-
-
             </LinearLayout>
-
-
-
         </LinearLayout>
-
-
     </LinearLayout>
-
-
 
 
 </LinearLayout>
