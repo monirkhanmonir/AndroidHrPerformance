@@ -40,7 +40,6 @@ public class EmpRating {
         this.productivityCmnt = productivityCmnt;
         this.communicationSkillsCmnt =communicationSkillsCmnt;
         this.dependabilityCmnt = dependabilityCmnt;
-
     }
 
 

@@ -31,6 +31,7 @@ public class PerformsnceReating extends AppCompatActivity {
     RatingBar jobKnowledge, workquality, attendance, productivity, communicationSkills, dependability;
     Button storeBtn;
     TextView displayDate;
+    String date;
     DatePickerDialog.OnDateSetListener onDateSetListener;
     String jobKnowledgeCmnt, workqualityCmnt, attendanceCmnt, productivityCmnt, communicationSkillsCmnt, dependabilityCmnt, additionalCmnt;
     private static final String TAG = "PerformsnceReating";
@@ -47,11 +48,11 @@ public class PerformsnceReating extends AppCompatActivity {
         workquality = findViewById(R.id.workqualit);
         attendance = findViewById(R.id.attendance);
         productivity = findViewById(R.id.productivity);
-        communicationSkills = findViewById(R.id.cmSkills);
+        communicationSkills = findViewById(R.id.cmSkillss);
         dependability = findViewById(R.id.dependability);
         storeBtn = findViewById(R.id.storeBtn);
         displayDate = findViewById(R.id.dateSelect);
-        String datee = "";
+       // String dateNew=date;
 
 
         displayDate.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +62,6 @@ public class PerformsnceReating extends AppCompatActivity {
                 int year = calendar.get(Calendar.YEAR);
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
-
                 DatePickerDialog datePickerDialog = new DatePickerDialog(PerformsnceReating.this,
                         android.R.style.Theme_Material_Dialog_MinWidth,
                         onDateSetListener,
@@ -76,7 +76,7 @@ public class PerformsnceReating extends AppCompatActivity {
                 month = month + 1;
                 Log.d(TAG, "onDateSet: mm/dd/yyyy : " + month + "/" + dayOfMonth + "/" + year);
 
-                String date = month + "/" + dayOfMonth + "/" + year;
+                date = month + "/" + dayOfMonth + "/" + year;
                 displayDate.setText(date);
             }
         };
@@ -96,9 +96,15 @@ public class PerformsnceReating extends AppCompatActivity {
                 double jobKnoldg = jobKnowledge.getRating();
                 double attend = attendance.getRating();
                 double productiv = productivity.getRating();
-                double commSkills = communicationSkills.getRight();
+                double commSkills = communicationSkills.getRating();
                 double workqlity = workquality.getRating();
                 double dependbl = dependability.getRating();
+
+
+
+                //double [] overAll = new double{jobKnoldg,attend,productiv,commSkills,workqlity,dependbl};
+
+
                 double overAllScore = jobKnoldg + attend + productiv + commSkills + dependbl;
 
                 if (jobKnoldg == 1) {
@@ -176,8 +182,8 @@ public class PerformsnceReating extends AppCompatActivity {
 
 
                 EmployeeInterF service = RetrofitClientInstance.getRetrofitInstance().create(EmployeeInterF.class);
-                EmpRating workReport = new EmpRating(name, ratingDate, jobKnowledgeCmnt, workqualityCmnt, attendanceCmnt, productivityCmnt, communicationSkillsCmnt, dependabilityCmnt, String.valueOf(jobKnoldg), String.valueOf(workqlity), String.valueOf(attend), String.valueOf(productiv), String.valueOf(commSkills), String.valueOf(dependbl), String.valueOf(overAllScore));
-                Call<EmpRating> call = service.storePerformanceRating(workReport);
+                EmpRating reating = new EmpRating(name, date, jobKnowledgeCmnt, workqualityCmnt, attendanceCmnt, productivityCmnt, communicationSkillsCmnt, dependabilityCmnt, String.valueOf(jobKnoldg), String.valueOf(workqlity), String.valueOf(attend), String.valueOf(productiv), String.valueOf(commSkills), String.valueOf(dependbl), String.valueOf(overAllScore));
+                Call<EmpRating> call = service.storePerformanceRating(reating);
                 call.enqueue(new Callback<EmpRating>() {
                     @Override
                     public void onResponse(Call<EmpRating> call, Response<EmpRating> response) {
