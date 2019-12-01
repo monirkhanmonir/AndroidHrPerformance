@@ -10,6 +10,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface EmployeeInterF {
     @GET("allEmployee")
@@ -21,6 +22,8 @@ public interface EmployeeInterF {
     @GET("empReport")
     Call<List<WorkReport>> getEmpReport();
 
+    @GET("login/{user}/{psd}")
+    Call<Employee> userLogin(@Path("user") String user,@Path("psd") String psd);
 
 
 
@@ -30,7 +33,6 @@ public interface EmployeeInterF {
     @POST("storeTaring")
     Call<EmpRating> storePerformanceRating(@Body EmpRating empRating);
 
-    @POST("login")
-    Call<Employee> userLogin(@Body Employee employee);
+
 
 }

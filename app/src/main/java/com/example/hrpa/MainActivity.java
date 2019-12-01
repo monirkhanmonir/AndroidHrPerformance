@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hrpa.Model.Employee;
 import com.example.hrpa.RetrofitConnector.RetrofitClientInstance;
@@ -41,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
 
      String user =   preferences.getString("userName","");
-     if(user.equals("admin")){
+     if(user.equals("Admin")){
          Intent intent = new Intent(MainActivity.this,AdminMenu.class);
          startActivity(intent);
-     }else if(user.equals("management")){
+     }else if(user.equals("Manager")){
          Intent intent = new Intent(MainActivity.this, ManagerMenu.class);
          startActivity(intent);
-     }else if(user.equals("employee")){
+     }else if(user.equals("Employee")){
          Intent intent = new Intent(MainActivity.this, EmployeeMenu.class);
          startActivity(intent);
      }
@@ -59,29 +61,72 @@ public class MainActivity extends AppCompatActivity {
                 String username = userName.getText().toString();
                 String pass = password.getText().toString();
 
+                Log.d("test", username);
+                Log.d("test2",pass);
 
-
-                /*EmployeeInterF service = RetrofitClientInstance.getRetrofitInstance().create(EmployeeInterF.class);
-                Employee employee = new Employee(username,pass);
-                Call<Employee> call = service.userLogin(employee);
+                EmployeeInterF service = RetrofitClientInstance.getRetrofitInstance().create(EmployeeInterF.class);
+                //Employee employee = new Employee(username,pass);
+                Call<Employee> call = service.userLogin(username,pass);
                 call.enqueue(new Callback<Employee>() {
                     @Override
                     public void onResponse(Call<Employee> call, Response<Employee> response) {
-                        Employee employee=  response.body();
 
+                        if(response.isSuccessful()){
+                            Employee employee=  response.body();
+                            if(employee.getJobTitle().equals("Admin")){
+
+                                SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
+                                SharedPreferences.Editor editor = preferences.edit();
+
+                                editor.putString("userName",employee.getJobTitle());
+                                editor.commit();
+
+                                Intent intent = new Intent(MainActivity.this, AdminMenu.class);
+                                startActivity(intent);
+                            }else if(employee.getJobTitle().equals("Employee")){
+                                SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
+                                SharedPreferences.Editor editor = preferences.edit();
+
+                                editor.putString("userName",employee.getJobTitle());
+                                editor.commit();
+
+                                Intent intent = new Intent(MainActivity.this, EmployeeMenu.class);
+                                startActivity(intent);
+                            }else if(employee.getJobTitle().equals("Manager")){
+                                SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
+                                SharedPreferences.Editor editor = preferences.edit();
+
+                                editor.putString("userName",employee.getJobTitle());
+                                editor.commit();
+
+                                Intent intent = new Intent(MainActivity.this, ManagerMenu.class);
+                                startActivity(intent);
+                            } else{
+                                count--;
+                                textView.setText("Number of Attempts remaining : " + count);
+                                if(count == 0){
+                                    login.setEnabled(false);
+                                }
+                            }
+
+                            Log.d("login",employee.toString());
+                            Log.d("login","Success........");
+                        }else if(!response.isSuccessful()){
+                            Log.d("login","Fail...........");
+                            Toast.makeText(getApplicationContext(),"User Name or Password is not currect",Toast.LENGTH_SHORT).show();
+                        }
                     }
-
                     @Override
                     public void onFailure(Call<Employee> call, Throwable t) {
 
                     }
-                });*/
+                });
 
 
 
 
 
-                if(username.equalsIgnoreCase("admin") && pass.equalsIgnoreCase("123")){
+                /*if(username.equalsIgnoreCase("admin") && pass.equalsIgnoreCase("123")){
 
                     SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
                     SharedPreferences.Editor editor = preferences.edit();
@@ -115,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                     if(count == 0){
                         login.setEnabled(false);
                     }
-                }
+                }*/
             }
         });
 
