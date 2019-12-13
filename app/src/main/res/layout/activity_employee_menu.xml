@@ -21,7 +21,7 @@
         <androidx.cardview.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/tasksAssigned"
+            android:id="@+id/empOwnperform"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -56,7 +56,7 @@
         <androidx.cardview.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/taskStatus"
+            android:id="@+id/eReport"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -136,7 +136,7 @@
         <androidx.cardview.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/aboutUs"
+            android:id="@+id/logout"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:layout_width="0dp"

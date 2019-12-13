@@ -32,8 +32,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-
-        android:weightSum="5">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
@@ -42,25 +41,25 @@
             android:gravity="center"
             android:text="Job Knowledge"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="6"
             android:orientation="vertical">
 
 
-
             <RatingBar
-                android:id="@+id/jobKnowledge"
-                android:layout_width="match_parent"
+                android:id="@+id/performRate"
+                android:layout_width="wrap_content"
                 android:layout_height="42dp"
+                android:isIndicator="true"
                 android:numStars="5"
                 android:progressBackgroundTint="@color/colorAccent"
                 android:progressTint="@color/colorPrimary"
-                android:stepSize="1" />
+                android:stepSize="1.0" />
             <TextView
                 android:id="@+id/jobKnowledgeCmnt"
                 android:layout_width="match_parent"
@@ -69,21 +68,17 @@
                 android:gravity="center"
                 android:text="Commect"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
         </LinearLayout>
-
-
     </LinearLayout>
 
-
    <!-- for Work Quality-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-
-        android:weightSum="5">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
@@ -92,27 +87,25 @@
             android:gravity="center"
             android:text="Work Quality"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="6"
             android:orientation="vertical">
+
 
             <RatingBar
                 android:id="@+id/workqualit"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="42dp"
+                android:isIndicator="true"
                 android:numStars="5"
                 android:progressBackgroundTint="@color/colorAccent"
                 android:progressTint="@color/colorPrimary"
-                android:stepSize="1" />
-
-
-
-
+                android:stepSize="1.0" />
             <TextView
                 android:id="@+id/workqualitycmn"
                 android:layout_width="match_parent"
@@ -121,23 +114,15 @@
                 android:gravity="center"
                 android:text="Commect"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
         </LinearLayout>
-
-
     </LinearLayout>
-
-
    <!-- For attendance-->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-
-        android:weightSum="5">
-
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
@@ -146,23 +131,25 @@
             android:gravity="center"
             android:text="Attendance"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="6"
             android:orientation="vertical">
+
+
             <RatingBar
                 android:id="@+id/attendance"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="42dp"
+                android:isIndicator="true"
                 android:numStars="5"
                 android:progressBackgroundTint="@color/colorAccent"
                 android:progressTint="@color/colorPrimary"
-                android:stepSize="1" />
-
+                android:stepSize="1.0" />
             <TextView
                 android:id="@+id/attendanceCmnt"
                 android:layout_width="match_parent"
@@ -171,13 +158,8 @@
                 android:gravity="center"
                 android:text="Commect"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-
         </LinearLayout>
-
-
     </LinearLayout>
-
 
    <!-- for productivity-->
 
@@ -186,8 +168,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-
-        android:weightSum="5">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
@@ -196,26 +177,25 @@
             android:gravity="center"
             android:text="Productivity"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="6"
             android:orientation="vertical">
+
+
             <RatingBar
                 android:id="@+id/productivity"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="42dp"
+                android:isIndicator="true"
                 android:numStars="5"
                 android:progressBackgroundTint="@color/colorAccent"
                 android:progressTint="@color/colorPrimary"
-                android:stepSize="1" />
-
-
-
-
+                android:stepSize="1.0" />
             <TextView
                 android:id="@+id/productivityCmnt"
                 android:layout_width="match_parent"
@@ -224,12 +204,10 @@
                 android:gravity="center"
                 android:text="Commect"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-
         </LinearLayout>
-
-
     </LinearLayout>
+
+
 
     <!--For Communication Skills-->
 
@@ -238,35 +216,34 @@
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-
-        android:weightSum="5">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:gravity="center"
-            android:text="Communication Skills"
+            android:text="Communiction Skills"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="6"
             android:orientation="vertical">
+
+
             <RatingBar
                 android:id="@+id/cmSkills"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="42dp"
+                android:isIndicator="true"
                 android:numStars="5"
                 android:progressBackgroundTint="@color/colorAccent"
                 android:progressTint="@color/colorPrimary"
-                android:stepSize="1" />
-
-
-
+                android:stepSize="1.0" />
             <TextView
                 android:id="@+id/cmSkillsCmnt"
                 android:layout_width="match_parent"
@@ -275,12 +252,10 @@
                 android:gravity="center"
                 android:text="Commect"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-
         </LinearLayout>
-
-
     </LinearLayout>
+
+
 
     <!--for dependability-->
 
@@ -289,8 +264,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-
-        android:weightSum="5">
+        android:weightSum="8">
 
         <TextView
             android:layout_width="0dp"
@@ -299,23 +273,25 @@
             android:gravity="center"
             android:text="Dependability"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="6"
             android:orientation="vertical">
+
+
             <RatingBar
                 android:id="@+id/dependability"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="42dp"
+                android:isIndicator="true"
                 android:numStars="5"
                 android:progressBackgroundTint="@color/colorAccent"
                 android:progressTint="@color/colorPrimary"
-                android:stepSize="1" />
-
+                android:stepSize="1.0" />
             <TextView
                 android:id="@+id/dependabilityCmnt"
                 android:layout_width="match_parent"
@@ -324,12 +300,6 @@
                 android:gravity="center"
                 android:text="Commect"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-
         </LinearLayout>
-
-
     </LinearLayout>
-
-
 </LinearLayout>

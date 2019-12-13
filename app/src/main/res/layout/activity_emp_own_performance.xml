@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmpOwnPerformance">
+
+    <ListView
+        android:id="@+id/ownPerView"
+        android:divider="#333"
+        android:dividerHeight="2dp"
+        android:listSelector="#8F9CC0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

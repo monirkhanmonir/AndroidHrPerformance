@@ -7,14 +7,16 @@ import android.os.Bundle;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-public class PerformanceDetails extends AppCompatActivity {
+public class OwnPerformDetails extends AppCompatActivity {
     RatingBar jobKnowledge, workquality, attendance, productivity, communicationSkills, dependability;
     TextView ratingDate, empName, jobKnowledgeCmnt, workqualityCmnt, attendanceCmnt, productivityCmnt, communicationSkillsCmnt, dependabilityCmnt, additionalCmnt;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_performance_details);
+        setContentView(R.layout.activity_own_perform_details);
+
         jobKnowledge = findViewById(R.id.performRate);
         workquality = findViewById(R.id.workqualit);
         attendance = findViewById(R.id.attendance);
@@ -32,7 +34,8 @@ public class PerformanceDetails extends AppCompatActivity {
         productivityCmnt = findViewById(R.id.productivityCmnt);
         communicationSkillsCmnt = findViewById(R.id.cmSkillsCmnt);
         dependabilityCmnt = findViewById(R.id.dependabilityCmnt);
-        //  additionalCmnt = findViewById(R.id.a)
+
+
 
         Intent intent = getIntent();
 
@@ -50,6 +53,5 @@ public class PerformanceDetails extends AppCompatActivity {
         communicationSkillsCmnt.setText(intent.getStringExtra("empcommunicationSkillscmnt"));
         dependability.setRating(Float.parseFloat(intent.getStringExtra("empdependability")));
         dependabilityCmnt.setText(intent.getStringExtra("empdependabilitycmnt"));
-
     }
 }

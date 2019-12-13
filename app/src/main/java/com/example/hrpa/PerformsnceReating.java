@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hrpa.Model.EmpRating;
-import com.example.hrpa.Model.WorkReport;
 import com.example.hrpa.RetrofitConnector.RetrofitClientInstance;
 import com.example.hrpa.hrpService.EmployeeInterF;
 
@@ -42,9 +41,9 @@ public class PerformsnceReating extends AppCompatActivity {
         setContentView(R.layout.activity_performsnce_reating);
         empId = findViewById(R.id.eID);
         empName = findViewById(R.id.eName);
-        repoType = findViewById(R.id.repoType);
+        repoType = findViewById(R.id.repoQuality);
         ratingDat = findViewById(R.id.ratingDate);
-        jobKnowledge = findViewById(R.id.jobKnowledge);
+        jobKnowledge = findViewById(R.id.performRate);
         workquality = findViewById(R.id.workqualit);
         attendance = findViewById(R.id.attendance);
         productivity = findViewById(R.id.productivity);

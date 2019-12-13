@@ -34,7 +34,7 @@ public class WorkReportAdapter extends ArrayAdapter<WorkReport> {
         TextView id = convertView.findViewById(R.id.eID);
         TextView name = convertView.findViewById(R.id.eName);
         TextView date = convertView.findViewById(R.id.empDate);
-        TextView repoType = convertView.findViewById(R.id.repoType);
+        TextView repoType = convertView.findViewById(R.id.repoQuality);
 
         id.setText(String.valueOf(reportList.get(position).getEmpId()));
         name.setText(reportList.get(position).getEmpName());

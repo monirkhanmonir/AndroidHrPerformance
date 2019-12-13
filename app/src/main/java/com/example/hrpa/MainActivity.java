@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
     private int count = 4;
+    String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,80 +44,86 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
 
-     String user =   preferences.getString("userName","");
-     if(user.equals("Admin")){
-         Intent intent = new Intent(MainActivity.this,AdminMenu.class);
-         startActivity(intent);
-     }else if(user.equals("Manager")){
-         Intent intent = new Intent(MainActivity.this, ManagerMenu.class);
-         startActivity(intent);
-     }else if(user.equals("Employee")){
-         Intent intent = new Intent(MainActivity.this, EmployeeMenu.class);
-         startActivity(intent);
-     }
+        String user = preferences.getString("userName", "");
+        String name = preferences.getString("user", "");
+        Log.d("check1", user);
+        Log.d("check2", name);
+
+        if (user.equals("Admin")) {
+            Intent intent = new Intent(MainActivity.this, AdminMenu.class);
+            startActivity(intent);
+        } else if (user.equals("Manager")) {
+            Intent intent = new Intent(MainActivity.this, ManagerMenu.class);
+            startActivity(intent);
+        } else if (user.equals("Employee")) {
+            Intent intent = new Intent(MainActivity.this, EmployeeMenu.class);
+            intent.putExtra("user", username);
+            startActivity(intent);
+        }
 
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = userName.getText().toString();
+                username = userName.getText().toString();
                 String pass = password.getText().toString();
 
-                Log.d("test", username);
-                Log.d("test2",pass);
+
 
                 EmployeeInterF service = RetrofitClientInstance.getRetrofitInstance().create(EmployeeInterF.class);
                 //Employee employee = new Employee(username,pass);
-                Call<Employee> call = service.userLogin(username,pass);
+                Call<Employee> call = service.userLogin(username, pass);
                 call.enqueue(new Callback<Employee>() {
                     @Override
                     public void onResponse(Call<Employee> call, Response<Employee> response) {
 
-                        if(response.isSuccessful()){
-                            Employee employee=  response.body();
-                            if(employee.getJobTitle().equals("Admin")){
+                        if (response.isSuccessful()) {
+                            Employee employee = response.body();
+                            if (employee.getJobTitle().equals("Admin")) {
 
                                 SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
                                 SharedPreferences.Editor editor = preferences.edit();
 
-                                editor.putString("userName",employee.getJobTitle());
+                                editor.putString("userName", employee.getJobTitle());
                                 editor.commit();
 
                                 Intent intent = new Intent(MainActivity.this, AdminMenu.class);
                                 startActivity(intent);
-                            }else if(employee.getJobTitle().equals("Employee")){
+                            } else if (employee.getJobTitle().equals("Employee")) {
                                 SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
                                 SharedPreferences.Editor editor = preferences.edit();
 
-                                editor.putString("userName",employee.getJobTitle());
+                                editor.putString("userName", employee.getJobTitle());
+                                editor.putString("user", employee.getEmpName());
                                 editor.commit();
 
                                 Intent intent = new Intent(MainActivity.this, EmployeeMenu.class);
                                 startActivity(intent);
-                            }else if(employee.getJobTitle().equals("Manager")){
+                            } else if (employee.getJobTitle().equals("Manager")) {
                                 SharedPreferences preferences = HrpSharePreferance.getSharePreferance(getApplicationContext());
                                 SharedPreferences.Editor editor = preferences.edit();
 
-                                editor.putString("userName",employee.getJobTitle());
+                                editor.putString("userName", employee.getJobTitle());
                                 editor.commit();
 
                                 Intent intent = new Intent(MainActivity.this, ManagerMenu.class);
                                 startActivity(intent);
-                            } else{
+                            } else {
                                 count--;
                                 textView.setText("Number of Attempts remaining : " + count);
-                                if(count == 0){
+                                if (count == 0) {
                                     login.setEnabled(false);
                                 }
                             }
 
-                            Log.d("login",employee.toString());
-                            Log.d("login","Success........");
-                        }else if(!response.isSuccessful()){
-                            Log.d("login","Fail...........");
-                            Toast.makeText(getApplicationContext(),"User Name or Password is not currect",Toast.LENGTH_SHORT).show();
+                            Log.d("login", employee.toString());
+                            Log.d("login", "Success........");
+                        } else if (!response.isSuccessful()) {
+                            Log.d("login", "Fail...........");
+                            Toast.makeText(getApplicationContext(), "User Name or Password is not currect", Toast.LENGTH_SHORT).show();
                         }
                     }
+
                     @Override
                     public void onFailure(Call<Employee> call, Throwable t) {
 

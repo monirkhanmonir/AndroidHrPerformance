@@ -1,5 +1,7 @@
 package com.example.hrpa.Model;
 
+import android.widget.EditText;
+
 public class WorkReport {
     public int id;
     public int empId;
@@ -10,6 +12,11 @@ public class WorkReport {
     public  String workReport;
     public String repoStatus;
 
+    public WorkReport(String repotype, String report) {
+        this.repoDuration = repotype;
+        this.workReport = report;
+
+    }
 
 
     public String getRepoStatus() {

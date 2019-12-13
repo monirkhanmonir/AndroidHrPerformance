@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GenerateReport" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Work Repotr Form"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:text="Repotr Type"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="30dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioGroup
+                android:id="@+id/repoGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/monthly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Monthly"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="15dp" />
+
+                <RadioButton
+                    android:id="@+id/quarterly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Quarterly"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="15dp" />
+                <RadioButton
+                    android:id="@+id/halfyear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Half yearly"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="15dp" />
+                <RadioButton
+                    android:id="@+id/yearly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Yearly"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="15dp" />
+
+
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="248dp">
+
+        <EditText
+            android:id="@+id/eReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Input Your Report Here....."
+            android:inputType="textMultiLine"
+            android:textSize="18sp" />
+       <!-- <EditText
+            android:id="@+id/eReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="input here.."/>-->
+    </ScrollView>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textSize="18sp" />
+
+</LinearLayout>

@@ -24,7 +24,7 @@ public class ReportDetails extends AppCompatActivity {
         eId = findViewById(R.id.eID);
         eName = findViewById(R.id.eName);
         repoDate = findViewById(R.id.repoDate);
-        repoQuality = findViewById(R.id.repoType);
+        repoQuality = findViewById(R.id.repoQuality);
         //textReport = findViewById(R.id.testReport);
         Intent intent = getIntent();
         name = intent.getStringExtra("eName");

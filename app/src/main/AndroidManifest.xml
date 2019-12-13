@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PerformsnceReating"></activity>
+        <activity android:name=".GenerateReport"></activity>
+        <activity android:name=".OwnPerformDetails" />
+        <activity android:name=".EmpOwnPerformance" />
+        <activity android:name=".PerformsnceReating" />
         <activity android:name=".ReportDetails" />
         <activity android:name=".EmployeeDetailsManager" />
         <activity android:name=".CreateTask" />
@@ -19,9 +22,7 @@
         <activity android:name=".PerformanceDetails" />
         <activity android:name=".EmployeeDetails" />
         <activity android:name=".EmployeeMenu" />
-        <activity android:name=".ManagerMenu">
-
-        </activity>
+        <activity android:name=".ManagerMenu" />
         <activity android:name=".AddEmployee" />
         <activity android:name=".EmployeeAppraisal" />
         <activity android:name=".EmployeeManagement" />
