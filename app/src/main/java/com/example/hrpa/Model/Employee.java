@@ -41,8 +41,8 @@ Integer eId;
         this.empName = empName;
         this.empEmail = empEmail;
         this.user = user;
-        this.jobTitle = jobTitle;
-        this.password = password;
+        this.jobTitle = password;
+        this.password = jobTitle;
         this.address = address;
     }
 

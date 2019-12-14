@@ -52,9 +52,9 @@ public class AddEmployee extends AppCompatActivity {
                 if(admin.isChecked()){
                     jobTitle = "Admin";
                 }else if(manager.isChecked()){
-                    jobTitle = "manager";
+                    jobTitle = "Manager";
                 }else if(employee.isChecked()){
-                    jobTitle = "employee";
+                    jobTitle = "Employee";
                 }
 
 
@@ -71,8 +71,17 @@ public class AddEmployee extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Employee> call, Response<Employee> response) {
                        if(response.isSuccessful()){
+                           empName.setText("");
+                           empEmail.setText("");
+                           empUser.setText("");
+                           empPsd.setText("");
+                           empAddress.setText("");
+                           Toast.makeText(getApplicationContext(),"Employee Successfully added",Toast.LENGTH_SHORT).show();
+
                            Log.d("test","Success......");
                        }else{
+                           Toast.makeText(getApplicationContext(),"Employee Registration Fail",Toast.LENGTH_SHORT).show();
+
                            Log.d("test","Not Success......");
                        }
                     }

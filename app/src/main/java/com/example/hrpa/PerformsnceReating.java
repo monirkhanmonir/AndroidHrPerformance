@@ -90,8 +90,11 @@ public class PerformsnceReating extends AppCompatActivity {
         storeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String id = empId.getText().toString();
+                Log.d("iD_Chack",id);
+                int ide = Integer.parseInt(id);
                 String name = empName.getText().toString();
-                String ratingDate = "12/12/1996";
+              //  String ratingDate = date;
                 double jobKnoldg = jobKnowledge.getRating();
                 double attend = attendance.getRating();
                 double productiv = productivity.getRating();
@@ -181,7 +184,7 @@ public class PerformsnceReating extends AppCompatActivity {
 
 
                 EmployeeInterF service = RetrofitClientInstance.getRetrofitInstance().create(EmployeeInterF.class);
-                EmpRating reating = new EmpRating(name, date, jobKnowledgeCmnt, workqualityCmnt, attendanceCmnt, productivityCmnt, communicationSkillsCmnt, dependabilityCmnt, String.valueOf(jobKnoldg), String.valueOf(workqlity), String.valueOf(attend), String.valueOf(productiv), String.valueOf(commSkills), String.valueOf(dependbl), String.valueOf(overAllScore));
+                EmpRating reating = new EmpRating(name,ide, date, jobKnowledgeCmnt, workqualityCmnt, attendanceCmnt, productivityCmnt, communicationSkillsCmnt, dependabilityCmnt, String.valueOf(jobKnoldg), String.valueOf(workqlity), String.valueOf(attend), String.valueOf(productiv), String.valueOf(commSkills), String.valueOf(dependbl), String.valueOf(overAllScore));
                 Call<EmpRating> call = service.storePerformanceRating(reating);
                 call.enqueue(new Callback<EmpRating>() {
                     @Override

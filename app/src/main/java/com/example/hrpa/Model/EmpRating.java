@@ -22,9 +22,9 @@ public class EmpRating {
     public String overallRating;
     public String additionalCmnt;
 
-    public EmpRating(String name, String ratingDate,String jobKnowledgeCmnt, String workqualityCmnt, String attendanceCmnt, String productivityCmnt,String communicationSkillsCmnt, String dependabilityCmnt, String jobKnowledge, String workquality, String attendance, String productivity, String communicationSkills, String dependability,String overallRating) {
+    public EmpRating(String name,int ide, String ratingDate,String jobKnowledgeCmnt, String workqualityCmnt, String attendanceCmnt, String productivityCmnt,String communicationSkillsCmnt, String dependabilityCmnt, String jobKnowledge, String workquality, String attendance, String productivity, String communicationSkills, String dependability,String overallRating) {
 
-
+        this.empId = ide;
         this.empName = name;
         this.jobKnowledge = jobKnowledge;
         this.workquality = workquality;
@@ -41,6 +41,7 @@ public class EmpRating {
         this.communicationSkillsCmnt =communicationSkillsCmnt;
         this.dependabilityCmnt = dependabilityCmnt;
     }
+
 
 
 

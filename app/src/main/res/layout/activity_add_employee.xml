@@ -4,11 +4,161 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorPrimary"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="15dp"
+        android:text="Full Name"
+        android:textColor="#fff" />
+
+    <EditText
+        android:id="@+id/employeeName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#F5F3F3"
+        android:hint="Input Full Name"
+        android:inputType="text"
+        android:maxLength="30"
+        android:paddingLeft="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="15dp"
+        android:text="Email Address: "
+        android:textColor="#fff" />
+
+    <EditText
+        android:id="@+id/employeeEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#F5F3F3"
+        android:hint="Input Email Addrses"
+        android:inputType="text"
+        android:maxLength="30"
+        android:paddingLeft="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="15dp"
+        android:text="User Name: "
+        android:textColor="#fff" />
+
+    <EditText
+        android:id="@+id/employeeUsername"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#F5F3F3"
+        android:hint="Input User Name..."
+        android:inputType="text"
+        android:maxLength="30"
+        android:paddingLeft="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="15dp"
+        android:text="Password: "
+        android:textColor="#fff" />
+
+    <EditText
+        android:id="@+id/empPsd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#F5F3F3"
+        android:hint="Input User Name..."
+        android:inputType="text"
+        android:maxLength="30"
+        android:paddingLeft="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="15dp"
+        android:text="Role: "
+        android:textColor="#fff"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/regAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Admin"
+            android:textSize="18sp"
+            android:textStyle="italic|bold"
+            android:textColor="#fff"/>
+
+        <RadioButton
+            android:id="@+id/regManager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Manager"
+            android:textSize="18sp"
+            android:textStyle="italic|bold"
+            android:textColor="#fff"/>
+
+        <RadioButton
+            android:id="@+id/regEmployee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="Employee"
+            android:textSize="18sp"
+            android:textStyle="italic|bold"
+            android:textColor="#fff"/>
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="15dp"
+        android:text="Address: "
+        android:textColor="#fff" />
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#F5F3F3"
+        android:hint="Input User Name..."
+        android:inputType="text"
+        android:maxLength="30"
+        android:paddingLeft="15dp" />
+    <Button
+        android:id="@+id/storeEmp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+    <!--<ScrollView
         android:layout_width="match_parent"
         android:layout_height="434dp">
 
@@ -25,48 +175,48 @@
             android:padding="10dp">
 
 
-            <TableRow android:layout_margin="5dp">
+            &lt;!&ndash; <TableRow android:layout_margin="5dp">
 
-                <EditText
-                    android:id="@+id/employeeName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="Enter Employee Name"
-                    android:padding="10dp"
-                    android:textSize="24sp"
-                    android:textStyle="bold|italic" />
-            </TableRow>
+                 <EditText
+                     android:id="@+id/employeeName"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:hint="Enter Employee Name"
+                     android:padding="10dp"
+                     android:textSize="24sp"
+                     android:textStyle="bold|italic" />
+             </TableRow>&ndash;&gt;
 
-            <TableRow android:layout_margin="5dp">
+            &lt;!&ndash; <TableRow android:layout_margin="5dp">
 
-                <EditText
-                    android:id="@+id/employeeEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:hint="Enter Email Address"
-                    android:padding="10dp"
-                    android:textSize="24sp"
-                    android:textStyle="bold|italic" />
-            </TableRow>
+                 <EditText
+                     android:id="@+id/employeeEmail"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:gravity="center"
+                     android:hint="Enter Email Address"
+                     android:padding="10dp"
+                     android:textSize="24sp"
+                     android:textStyle="bold|italic" />
+             </TableRow>&ndash;&gt;
 
-            <TableRow android:layout_margin="5dp">
+            &lt;!&ndash; <TableRow android:layout_margin="5dp">
 
-                <EditText
-                    android:id="@+id/employeeUsername"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:hint="Enter User Name"
-                    android:padding="10dp"
-                    android:textSize="24sp"
-                    android:textStyle="bold|italic" />
-            </TableRow>
+                 <EditText
+                     android:id="@+id/employeeUsername"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:gravity="center"
+                     android:hint="Enter User Name"
+                     android:padding="10dp"
+                     android:textSize="24sp"
+                     android:textStyle="bold|italic" />
+             </TableRow>&ndash;&gt;
 
-            <TableRow android:layout_margin="5dp">
+            &lt;!&ndash;<TableRow android:layout_margin="5dp">
 
                 <EditText
                     android:id="@+id/empPsd"
@@ -78,9 +228,9 @@
                     android:padding="10dp"
                     android:textSize="24sp"
                     android:textStyle="bold|italic" />
-            </TableRow>
+            </TableRow>&ndash;&gt;
 
-            <TableRow android:layout_margin="5dp">
+            &lt;!&ndash;<TableRow android:layout_margin="5dp">
 
                 <RadioGroup
                     android:layout_width="match_parent"
@@ -117,10 +267,10 @@
                         android:textSize="18sp"
                         android:textStyle="italic|bold" />
                 </RadioGroup>
-            </TableRow>
+            </TableRow>&ndash;&gt;
 
 
-            <TableRow android:layout_margin="5dp">
+           &lt;!&ndash; <TableRow android:layout_margin="5dp">
 
                 <EditText
                     android:id="@+id/address"
@@ -132,8 +282,8 @@
                     android:padding="10dp"
                     android:textSize="24sp"
                     android:textStyle="bold|italic" />
-            </TableRow>
-            <!--<TableRow android:layout_margin="5dp">
+            </TableRow>&ndash;&gt;
+            &lt;!&ndash;<TableRow android:layout_margin="5dp">
 
                 <EditText
                     android:id="@+id/employeeId"
@@ -145,17 +295,11 @@
                     android:padding="10dp"
                     android:textSize="24sp"
                     android:textStyle="bold|italic" />
-            </TableRow>-->
+            </TableRow>&ndash;&gt;
         </TableLayout>
 
 
-    </ScrollView>
+    </ScrollView>-->
 
-    <Button
-        android:id="@+id/storeEmp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:textAlignment="center"
-        android:textSize="30dp" />
+
 </LinearLayout>
